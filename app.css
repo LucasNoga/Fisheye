@@ -1,3 +1,7 @@
+:root {
+  --size: 64px;
+}
+
 body {
   background-color: #000;
   font-family: sans-serif;
@@ -16,13 +20,24 @@ body {
   display: flex;
 }
 
+.dock.animated .dock-icon {
+  transition: 0.1s;
+  transition-property: transform, transform-origin;
+}
+
 .dock-icon {
-  width: 64px;
-  height: 64px;
-  outline: solid 1px #fff;
-  border: solid 1px #fff;
-  color: #fff;
+  width: var(--size);
+  height: var(--size);
   display: flex;
   align-items: center;
   justify-content: center;
+  transform-origin: center bottom;
+  background: transparent;
+  border: none;
+}
+
+.dock-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
